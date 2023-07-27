@@ -1,0 +1,8 @@
+docker-machine create \
+    -d digitalocean \
+    --digitalocean-access-token  $(cat do_token) \
+    --digitalocean-image ubuntu-18-04-x64  \
+    --digitalocean-region sgp1 \
+    --digitalocean-backups=false \
+    --engine-install-url "https://releases.rancher.com/install-docker/19.03.9.sh" \
+    docker-nginx

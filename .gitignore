@@ -1,0 +1,5 @@
+do_token
+.terraform
+*.lock.hcl
+*.tfstate
+*.tfstate.backup
