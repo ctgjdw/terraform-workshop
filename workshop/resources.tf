@@ -104,7 +104,7 @@ resource "digitalocean_droplet" "nginx-rps" {
 }
 
 resource "local_file" "root_at_nginx" {
-    filename = "root@${digitalocean_droplet.nginx.ipv4_address}"
+    filename = "root@${digitalocean_droplet.nginx-rps.ipv4_address}"
     content = ""
     file_permission = "0444"
 }
