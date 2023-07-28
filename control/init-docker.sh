@@ -24,5 +24,5 @@ echo "Docker droplet provisioned..."
 echo "Setting env variables for terraform..."
 
 echo "export SSH_P_KEY=/root/.ssh/id_rsa" >>/root/.bashrc
-docker-machine env docker-nginx | grep DOCKER_HOST >>/root/.bashrc
+echo "export DOCKER_HOST=$(docker-machine env docker-nginx | grep DOCKER_HOST | awk -F'[/:]' '{print $4}')" >>/root/.bashrc
 docker-machine env docker-nginx | grep DOCKER_CERT_PATH >>/root/.bashrc
