@@ -9,7 +9,7 @@ For raising the control server in `./control`:
 -   Use a terraform instance in your local PC (i.e. WSL/Windows):
 -   Get a PAT (access token) from Digital Ocean and populate `./control/do_token`
 -   Generate a SSH key and save to Digital Ocean (SSH key should be in the local PC's User's `.ssh` folder)
-    -   The key name saved in Digital Ocean should match the name defined in `digitalocean_ssh_key` in `./control/provider.tf` and `./workshop/resources.tf`
+    -   The key name saved in Digital Ocean should match the name defined in `digitalocean_ssh_key` in `./control/provider.tf` and `./apps/resources.tf`
 
 ```bash
 cd ./control
@@ -23,10 +23,10 @@ terraform plan -var "do_token=$DO_TOKEN"
 terraform apply -var "do_token=$DO_TOKEN" -auto-approve
 ```
 
-For raising the app stack in `./workshop`:
+For raising the app stack in `./apps`:
 
 ```bash
-cd ./workshop
+cd ./apps
 
 terraform init
 
